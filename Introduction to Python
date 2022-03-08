@@ -1,3 +1,4 @@
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 The Python Interface
 
 In the Python script on the right, you can type Python code to solve the exercises. If you hit Run Code or Submit Answer, your python script (script.py) is executed and the output is shown in the IPython Shell. Submit Answer checks whether your submission is correct and gives you feedback.
@@ -166,6 +167,7 @@ pi_string = "3.1415926"
 # Convert pi_string into float: pi_float
 pi_float = float(pi_string)
 
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Create a list
 As opposed to int, bool etc., a list is a compound data type; you can group values together:
 
@@ -568,6 +570,7 @@ areas.reverse()
 # Print out areas
 print(areas)
 
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Import package
 As a data scientist, some notions of geometry never hurt. Let's refresh some of the basics.
 
@@ -622,6 +625,7 @@ dist = r * radians(12)
 # Print out dist
 print(dist)
 
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Your First NumPy Array
 In this chapter, we're going to dive into the world of baseball. Along the way, you'll get comfortable with the basics of numpy, a powerful package to do data science.
 
