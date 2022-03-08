@@ -1,1 +1,624 @@
+The Python Interface
+
+In the Python script on the right, you can type Python code to solve the exercises. If you hit Run Code or Submit Answer, your python script (script.py) is executed and the output is shown in the IPython Shell. Submit Answer checks whether your submission is correct and gives you feedback.
+You can hit Run Code and Submit Answer as often as you want. If you're stuck, you can click Get Hint, and ultimately Get Solution.
+You can also use the IPython Shell interactively by simply typing commands and hitting Enter. When you work in the shell directly, your code will not be checked for correctness so it is a great way to experiment.
+
+Instructions
+Experiment in the IPython Shell; type 5 / 8, for example.
+Add another line of code to the Python script on the top-right (not in the Shell): print(7 + 10).
+Hit Submit Answer to execute the Python script and receive feedback.
+
+# Example, do not modify!
+print(5 / 8)
+
+
+# Print the sum of 7 and 10
+print(7 + 10)
+
+
+Python as a calculator
+Python is perfectly suited to do basic calculations. Apart from addition, subtraction, multiplication and division, there is also support for more advanced operations such as:
+
+Exponentiation: **. This operator raises the number to its left to the power of the number to its right. For example 4**2 will give 16.
+Modulo: %. This operator returns the remainder of the division of the number to the left by the number on its right. For example 18 % 7 equals 4.
+The code in the script gives some examples.
+
+
+Instructions
+100 XP
+Suppose you have $100, which you can invest with a 10% return each year. After one year, it's  dollars, and after two years it's . Add code to calculate how much money you end up with after 7 years, and print the result.
+
+# Addition, subtraction
+print(5 + 5)
+print(5 - 5)
+
+# Multiplication, division, modulo, and exponentiation
+print(3 * 5)
+print(10 / 2)
+print(18 % 7)
+print(4 ** 2)
+
+# How much is your $100 worth after 7 years?
+print(1.1**7 * 100)
+
+Variable Assignment
+In Python, a variable allows you to refer to a value with a name. To create a variable use =, like this example:
+
+x = 5
+You can now use the name of this variable, x, instead of the actual value, 5.
+
+Remember, = in Python means assignment, it doesn't test equality!
+
+Instructions
+100 XP
+Create a variable savings with the value 100.
+Check out this variable by typing print(savings) in the script.
+
+# Create a variable savings
+savings = 100
+
+# Print out savings
+print(savings)
+
+Calculations with variables
+Remember how you calculated the money you ended up with after 7 years of investing $100? You did something like this:
+
+100 * 1.1 ** 7
+Instead of calculating with the actual values, you can use variables instead. The savings variable you've created in the previous exercise represents the $100 you started with. It's up to you to create a new variable to represent 1.1 and then redo the calculations!
+
+Instructions
+100 XP
+Create a variable growth_multiplier, equal to 1.1.
+Create a variable, result, equal to the amount of money you saved after 7 years.
+Print out the value of result.
+
+# Create a variable savings
+savings = 100
+
+# Create a variable growth_multiplier
+growth_multiplier = 1.1
+
+# Calculate result
+result = savings*growth_multiplier**7
+
+# Print out result
+print(result)
+
+Other variable types
+In the previous exercise, you worked with two Python data types:
+
+int, or integer: a number without a fractional part. savings, with the value 100, is an example of an integer.
+float, or floating point: a number that has both an integer and fractional part, separated by a point. growth_multiplier, with the value 1.1, is an example of a float.
+Next to numerical data types, there are two other very common data types:
+
+str, or string: a type to represent text. You can use single or double quotes to build a string.
+bool, or boolean: a type to represent logical values. Can only be True or False (the capitalization is important!).
+Instructions
+100 XP
+Create a new string, desc, with the value "compound interest".
+Create a new boolean, profitable, with the value True.
+
+# Create a variable desc
+desc = ("compound interest")
+
+# Create a variable profitable
+profitable = (True)
+
+Operations with other types
+Hugo mentioned that different types behave differently in Python.
+
+When you sum two strings, for example, you'll get different behavior than when you sum two integers or two booleans.
+
+In the script some variables with different types have already been created. It's up to you to use them.
+
+Instructions
+100 XP
+Calculate the product of savings and growth_multiplier. Store the result in year1.
+What do you think the resulting type will be? Find out by printing out the type of year1.
+Calculate the sum of desc and desc and store the result in a new variable doubledesc.
+Print out doubledesc. Did you expect this?
+
+savings = 100
+growth_multiplier = 1.1
+desc = "compound interest"
+
+# Assign product of savings and growth_multiplier to year1
+year1 = savings*growth_multiplier
+
+# Print the type of year1
+print(type(year1))
+
+# Assign sum of desc and desc to doubledesc
+doubledesc = desc+desc
+
+# Print out doubledesc
+print(doubledesc)
+
+Type conversion
+Using the + operator to paste together two strings can be very useful in building custom messages.
+
+Suppose, for example, that you've calculated the return of your investment and want to summarize the results in a string. Assuming the integer savings and float result are defined, you can try something like this:
+
+print("I started with $" + savings + " and now have $" + result + ". Awesome!")
+This will not work, though, as you cannot simply sum strings and integers/floats.
+
+To fix the error, you'll need to explicitly convert the types of your variables. More specifically, you'll need str(), to convert a value into a string. str(savings), for example, will convert the integer savings to a string.
+
+Similar functions such as int(), float() and bool() will help you convert Python values into any type.
+
+Instructions
+100 XP
+Hit Run Code to run the code. Try to understand the error message.
+Fix the code such that the printout runs without errors; use the function str() to convert the variables to strings.
+Convert the variable pi_string to a float and store this float as a new variable, pi_float.
+
+# Definition of savings and result
+savings = 100
+result = 100 * 1.10 ** 7
+
+# Fix the printout
+print("I started with $" + str(savings) + " and now have $" + str(result) + ". Awesome!")
+
+# Definition of pi_string
+pi_string = "3.1415926"
+
+# Convert pi_string into float: pi_float
+pi_float = float(pi_string)
+
+Create a list
+As opposed to int, bool etc., a list is a compound data type; you can group values together:
+
+a = "is"
+b = "nice"
+my_list = ["my", "list", a, b]
+After measuring the height of your family, you decide to collect some information on the house you're living in. The areas of the different parts of your house are stored in separate variables for now, as shown in the script.
+
+Instructions
+100 XP
+Create a list, areas, that contains the area of the hallway (hall), kitchen (kit), living room (liv), bedroom (bed) and bathroom (bath), in this order. Use the predefined variables.
+Print areas with the print() function.
+
+# area variables (in square meters)
+hall = 11.25
+kit = 18.0
+liv = 20.0
+bed = 10.75
+bath = 9.50
+
+# Create list areas
+areas = [hall, kit, liv, bed, bath]
+
+# Print areas
+print(areas)
+
+Create list with different types
+A list can contain any Python type. Although it's not really common, a list can also contain a mix of Python types including strings, floats, booleans, etc.
+
+The printout of the previous exercise wasn't really satisfying. It's just a list of numbers representing the areas, but you can't tell which area corresponds to which part of your house.
+
+The code in the editor is the start of a solution. For some of the areas, the name of the corresponding room is already placed in front. Pay attention here! "bathroom" is a string, while bath is a variable that represents the float 9.50 you specified earlier.
+
+Instructions
+100 XP
+Instructions
+100 XP
+Finish the code that creates the areas list. Build the list so that the list first contains the name of each room as a string and then its area. In other words, add the strings "hallway", "kitchen" and "bedroom" at the appropriate locations.
+Print areas again; is the printout more informative this time?
+
+# area variables (in square meters)
+hall = 11.25
+kit = 18.0
+liv = 20.0
+bed = 10.75
+bath = 9.50
+
+# Adapt list areas
+areas = ["hallway", hall,"kitchen", kit, "living room", liv, "bedroom", bed, "bathroom", bath]
+
+# Print areas
+print(areas)
+
+List of lists
+As a data scientist, you'll often be dealing with a lot of data, and it will make sense to group some of this data.
+
+Instead of creating a flat list containing strings and floats, representing the names and areas of the rooms in your house, you can create a list of lists. The script in the editor can already give you an idea.
+
+Don't get confused here: "hallway" is a string, while hall is a variable that represents the float 11.25 you specified earlier.
+
+Instructions
+100 XP
+Instructions
+100 XP
+Finish the list of lists so that it also contains the bedroom and bathroom data. Make sure you enter these in order!
+Print out house; does this way of structuring your data make more sense?
+Print out the type of house. Are you still dealing with a list?
+
+# area variables (in square meters)
+hall = 11.25
+kit = 18.0
+liv = 20.0
+bed = 10.75
+bath = 9.50
+
+# house information as list of lists
+house = [["hallway", hall],
+         ["kitchen", kit],
+         ["living room", liv],
+         ["bedroom", bed],
+         ["bathroom", bath]]
+
+
+# Print out house
+print(house)
+
+# Print out the type of house
+print(type(house))
+
+Subset and conquer
+Subsetting Python lists is a piece of cake. Take the code sample below, which creates a list x and then selects "b" from it. Remember that this is the second element, so it has index 1. You can also use negative indexing.
+
+x = ["a", "b", "c", "d"]
+x[1]
+x[-3] # same result!
+Remember the areas list from before, containing both strings and floats? Its definition is already in the script. Can you add the correct code to do some Python subsetting?
+
+Instructions
+100 XP
+Print out the second element from the areas list (it has the value 11.25).
+Subset and print out the last element of areas, being 9.50. Using a negative index makes sense here!
+Select the number representing the area of the living room (20.0) and print it out.
+
+# Create the areas list
+areas = ["hallway", 11.25, "kitchen", 18.0, "living room", 20.0, "bedroom", 10.75, "bathroom", 9.50]
+
+# Print out second element from areas
+print(areas[1])
+
+# Print out last element from areas
+print(areas[-1])
+
+# Print out the area of the living room
+print(areas[5])
+
+Subset and calculate
+After you've extracted values from a list, you can use them to perform additional calculations. Take this example, where the second and fourth element of a list x are extracted. The strings that result are pasted together using the + operator:
+
+x = ["a", "b", "c", "d"]
+print(x[1] + x[3])
+Instructions
+100 XP
+Using a combination of list subsetting and variable assignment, create a new variable, eat_sleep_area, that contains the sum of the area of the kitchen and the area of the bedroom.
+Print the new variable eat_sleep_area.
+
+# Create the areas list
+areas = ["hallway", 11.25, "kitchen", 18.0, "living room", 20.0, "bedroom", 10.75, "bathroom", 9.50]
+
+# Sum of kitchen and bedroom area: eat_sleep_area
+eat_sleep_area = areas[3] + areas[-3]
+
+# Print the variable eat_sleep_area
+print(eat_sleep_area)
+
+Slicing and dicing
+Selecting single values from a list is just one part of the story. It's also possible to slice your list, which means selecting multiple elements from your list. Use the following syntax:
+
+my_list[start:end]
+The start index will be included, while the end index is not.
+
+The code sample below shows an example. A list with "b" and "c", corresponding to indexes 1 and 2, are selected from a list x:
+
+x = ["a", "b", "c", "d"]
+x[1:3]
+The elements with index 1 and 2 are included, while the element with index 3 is not.
+
+Instructions
+100 XP
+Use slicing to create a list, downstairs, that contains the first 6 elements of areas.
+Do a similar thing to create a new variable, upstairs, that contains the last 4 elements of areas.
+Print both downstairs and upstairs using print().
+
+# Create the areas list
+areas = ["hallway", 11.25, "kitchen", 18.0, "living room", 20.0, "bedroom", 10.75, "bathroom", 9.50]
+
+# Use slicing to create downstairs
+downstairs = areas[0:6]
+
+# Use slicing to create upstairs
+upstairs = areas[6:10]
+
+# Print out downstairs and upstairs
+print(downstairs)
+print(upstairs)
+
+Slicing and dicing (2)
+In the video, Hugo first discussed the syntax where you specify both where to begin and end the slice of your list:
+
+my_list[begin:end]
+However, it's also possible not to specify these indexes. If you don't specify the begin index, Python figures out that you want to start your slice at the beginning of your list. If you don't specify the end index, the slice will go all the way to the last element of your list. To experiment with this, try the following commands in the IPython Shell:
+
+x = ["a", "b", "c", "d"]
+x[:2]
+x[2:]
+x[:]
+Instructions
+100 XP
+Create downstairs again, as the first 6 elements of areas. This time, simplify the slicing by omitting the begin index.
+Create upstairs again, as the last 4 elements of areas. This time, simplify the slicing by omitting the end index.
+
+# Create the areas list
+areas = ["hallway", 11.25, "kitchen", 18.0, "living room", 20.0, "bedroom", 10.75, "bathroom", 9.50]
+
+# Alternative slicing to create downstairs
+downstairs = areas[:6]
+
+# Alternative slicing to create upstairs
+upstairs = areas[6:]
+
+Replace list elements
+Replacing list elements is pretty easy. Simply subset the list and assign new values to the subset. You can select single elements or you can change entire list slices at once.
+
+Use the IPython Shell to experiment with the commands below. Can you tell what's happening and why?
+
+x = ["a", "b", "c", "d"]
+x[1] = "r"
+x[2:] = ["s", "t"]
+For this and the following exercises, you'll continue working on the areas list that contains the names and areas of different rooms in a house.
+
+Instructions
+100 XP
+Update the area of the bathroom area to be 10.50 square meters instead of 9.50.
+Make the areas list more trendy! Change "living room" to "chill zone".
+
+# Create the areas list
+areas = ["hallway", 11.25, "kitchen", 18.0, "living room", 20.0, "bedroom", 10.75, "bathroom", 9.50]
+
+# Correct the bathroom area
+areas[-1] = 10.50
+
+# Change "living room" to "chill zone"
+areas[4] = "chill zone"
+
+Extend a list
+If you can change elements in a list, you sure want to be able to add elements to it, right? You can use the + operator:
+
+x = ["a", "b", "c", "d"]
+y = x + ["e", "f"]
+You just won the lottery, awesome! You decide to build a poolhouse and a garage. Can you add the information to the areas list?
+
+Instructions
+100 XP
+Use the + operator to paste the list ["poolhouse", 24.5] to the end of the areas list. Store the resulting list as areas_1.
+Further extend areas_1 by adding data on your garage. Add the string "garage" and float 15.45. Name the resulting list areas_2.
+
+areas = ["hallway", 11.25, "kitchen", 18.0, "chill zone", 20.0,
+         "bedroom", 10.75, "bathroom", 10.50]
+
+# Add poolhouse data to areas, new list is areas_1
+areas_1 = areas + ["poolhouse", 24.5]
+
+# Add garage data to areas_1, new list is areas_2
+areas_2 = areas_1 + ["garage", 15.45]
+
+Inner workings of lists
+At the end of the video, Hugo explained how Python lists work behind the scenes. In this exercise you'll get some hands-on experience with this.
+
+The Python code in the script already creates a list with the name areas and a copy named areas_copy. Next, the first element in the areas_copy list is changed and the areas list is printed out. If you hit Run Code you'll see that, although you've changed areas_copy, the change also takes effect in the areas list. That's because areas and areas_copy point to the same list.
+
+If you want to prevent changes in areas_copy from also taking effect in areas, you'll have to do a more explicit copy of the areas list. You can do this with list() or by using [:].
+
+Instructions
+100 XP
+Instructions
+100 XP
+Change the second command, that creates the variable areas_copy, such that areas_copy is an explicit copy of areas. After your edit, changes made to areas_copy shouldn't affect areas. Submit the answer to check this.
+
+# Create list areas
+areas = [11.25, 18.0, 20.0, 10.75, 9.50]
+
+# Create areas_copy
+areas_copy = list(areas)
+
+# Change areas_copy
+areas_copy[0] = 5.0
+
+# Print areas
+print(areas)
+
+Familiar functions
+Out of the box, Python offers a bunch of built-in functions to make your life as a data scientist easier. You already know two such functions: print() and type(). You've also used the functions str(), int(), bool() and float() to switch between data types. These are built-in functions as well.
+
+Calling a function is easy. To get the type of 3.0 and store the output as a new variable, result, you can use the following:
+
+result = type(3.0)
+The general recipe for calling functions and saving the result to a variable is thus:
+
+output = function_name(input)
+Instructions
+100 XP
+Use print() in combination with type() to print out the type of var1.
+Use len() to get the length of the list var1. Wrap it in a print() call to directly print it out.
+Use int() to convert var2 to an integer. Store the output as out2.
+
+# Create variables var1 and var2
+var1 = [1, 2, 3, 4]
+var2 = True
+
+# Print out type of var1
+print(type(var1))
+
+# Print out length of var1
+print(len(var1))
+
+# Convert var2 to an integer: out2
+out2 = int(var2)
+
+Multiple arguments
+In the previous exercise, you identified optional arguments by viewing the documentation with help(). You'll now apply this to change the behavior of the sorted() function.
+
+Have a look at the documentation of sorted() by typing help(sorted) in the IPython Shell.
+
+You'll see that sorted() takes three arguments: iterable, key, and reverse.
+
+key=None means that if you don't specify the key argument, it will be None. reverse=False means that if you don't specify the reverse argument, it will be False, by default.
+
+In this exercise, you'll only have to specify iterable and reverse, not key. The first input you pass to sorted() will be matched to the iterable argument, but what about the second input? To tell Python you want to specify reverse without changing anything about key, you can use = to assign it a new value:
+
+sorted(____, reverse=____)
+Two lists have been created for you. Can you paste them together and sort them in descending order?
+
+Note: For now, we can understand an iterable as being any collection of objects, e.g., a List.
+
+Instructions
+100 XP
+Use + to merge the contents of first and second into a new list: full.
+Call sorted() on full and specify the reverse argument to be True. Save the sorted list as full_sorted.
+Finish off by printing out full_sorted.
+
+# Create lists first and second
+first = [11.25, 18.0, 20.0]
+second = [10.75, 9.50]
+
+# Paste together first and second: full
+full = first + second
+
+# Sort full in descending order: full_sorted
+full_sorted = sorted(full, reverse = True)
+
+# Print out full_sorted
+print(full_sorted)
+
+String Methods
+Strings come with a bunch of methods. Follow the instructions closely to discover some of them. If you want to discover them in more detail, you can always type help(str) in the IPython Shell.
+
+A string place has already been created for you to experiment with.
+
+Instructions
+100 XP
+Instructions
+100 XP
+Use the upper() method on place and store the result in place_up. Use the syntax for calling methods that you learned in the previous video.
+Print out place and place_up. Did both change?
+Print out the number of o's on the variable place by calling count() on place and passing the letter 'o' as an input to the method. We're talking about the variable place, not the word "place"!
+
+# string to experiment with: place
+place = "poolhouse"
+
+# Use upper() on place: place_up
+place_up = place.upper()
+
+# Print out place and place_up
+print(place)
+print(place_up)
+# Print out the number of o's in place
+print(place.count('o'))
+
+List Methods
+Strings are not the only Python types that have methods associated with them. Lists, floats, integers and booleans are also types that come packaged with a bunch of useful methods. In this exercise, you'll be experimenting with:
+
+index(), to get the index of the first element of a list that matches its input and
+count(), to get the number of times an element appears in a list.
+You'll be working on the list with the area of different parts of a house: areas.
+
+Instructions
+100 XP
+Instructions
+100 XP
+Use the index() method to get the index of the element in areas that is equal to 20.0. Print out this index.
+Call count() on areas to find out how many times 9.50 appears in the list. Again, simply print out this number.
+
+# Create list areas
+areas = [11.25, 18.0, 20.0, 10.75, 9.50]
+
+# Print out the index of the element 20.0
+print(areas.index(20.0))
+
+# Print out how often 9.50 appears in areas
+print(areas.count(9.50))
+
+List Methods (2)
+Most list methods will change the list they're called on. Examples are:
+
+append(), that adds an element to the list it is called on,
+remove(), that removes the first element of a list that matches the input, and
+reverse(), that reverses the order of the elements in the list it is called on.
+You'll be working on the list with the area of different parts of the house: areas.
+
+Instructions
+100 XP
+Use append() twice to add the size of the poolhouse and the garage again: 24.5 and 15.45, respectively. Make sure to add them in this order.
+Print out areas
+Use the reverse() method to reverse the order of the elements in areas.
+Print out areas once more.
+
+# Create list areas
+areas = [11.25, 18.0, 20.0, 10.75, 9.50]
+
+# Use append twice to add poolhouse and garage size
+areas.append(24.5)
+areas.append(15.45)
+
+
+# Print out areas
+print(areas)
+
+# Reverse the orders of the elements in areas
+areas.reverse()
+
+# Print out areas
+print(areas)
+
+Import package
+As a data scientist, some notions of geometry never hurt. Let's refresh some of the basics.
+
+For a fancy clustering algorithm, you want to find the circumference, , and area, , of a circle. When the radius of the circle is r, you can calculate  and  as:
+
+
+To use the constant pi, you'll need the math package. A variable r is already coded in the script. Fill in the code to calculate C and A and see how the print() functions create some nice printouts.
+
+Instructions
+100 XP
+Import the math package. Now you can access the constant pi with math.pi.
+Calculate the circumference of the circle and store it in C.
+Calculate the area of the circle and store it in A.
+
+# Definition of radius
+r = 0.43
+
+# Import the math package
+import math 
+
+# Calculate C
+C =  2 * r * math.pi
+
+# Calculate A
+A = math.pi * r **2
+
+# Build printout
+print("Circumference: " + str(C))
+print("Area: " + str(A))
+
+Selective import
+General imports, like import math, make all functionality from the math package available to you. However, if you decide to only use a specific part of a package, you can always make your import more selective:
+
+from math import pi
+Let's say the Moon's orbit around planet Earth is a perfect circle, with a radius r (in km) that is defined in the script.
+
+Instructions
+100 XP
+Perform a selective import from the math package where you only import the radians function.
+Calculate the distance travelled by the Moon over 12 degrees of its orbit. Assign the result to dist. You can calculate this as r * phi, where r is the radius and phi is the angle in radians. To convert an angle in degrees to an angle in radians, use the radians() function, which you just imported.
+Print out dist.
+
+# Definition of radius
+r = 192500
+
+# Import radians function of math package
+from math import radians
+
+# Travel distance of Moon over 12 degrees. Store in dist.
+dist = r * radians(12)
+
+# Print out dist
+print(dist)
 
